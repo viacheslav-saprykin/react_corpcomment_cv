@@ -23,7 +23,7 @@ The project incorporates modern development approaches:
 To get started with CorpComment, run:
 
 ```sh
-git clone https://github.com/viacheslav-saprykin/react_corpcomment
+git clone https://github.com/viacheslav-saprykin/react_corpcomment_cv.git
 cd corpcomment
 npm install
 npm run dev
