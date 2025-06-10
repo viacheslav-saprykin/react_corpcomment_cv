@@ -11,6 +11,11 @@ CorpComment is built using cutting-edge technologies:
 - **Fetch API** — efficient data retrieval.
 - **Zustand** — lightweight and powerful state management.
 
+## 🌍 Live Demo
+
+You can check out the **live demo** of the project on **GitHub Pages**:  
+➡️ [CorpComment Demo](https://viacheslav-saprykin.github.io/react_corpcomment_cv/)
+
 ## 🛠️ Core Concepts
 
 The project incorporates modern development approaches:
@@ -27,4 +32,3 @@ git clone https://github.com/viacheslav-saprykin/react_corpcomment_cv.git
 cd corpcomment
 npm install
 npm run dev
-git
