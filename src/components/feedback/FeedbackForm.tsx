@@ -31,6 +31,7 @@ export default function FeedbackForm({ onAddToList }: FeedbackFormProps) {
       setTimeout(() => setShowInvalidIndicator(false), 2000);
       return;
     }
+
     onAddToList(text);
     setText('');
   };
@@ -38,20 +39,22 @@ export default function FeedbackForm({ onAddToList }: FeedbackFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className={`form ${showValidIndicator ? ' form--valid' : ''}${
-        showInvalidIndicator ? ' form--invalid' : ''
+      className={`form ${showValidIndicator ? 'form--valid' : ''} ${
+        showInvalidIndicator ? 'form--invalid' : ''
       }`}
     >
       <textarea
         value={text}
         onChange={handleChange}
-        placeholder="sometext"
         id="feedback-textarea"
+        placeholder="blabla"
         spellCheck={false}
       />
+
       <label htmlFor="feedback-textarea">
-        Enter your feedback here, remember to #hashtag the company.
+        Enter your feedback here, remember to #hashtag the company
       </label>
+
       <div>
         <p className="u-italic">{charCount}</p>
         <button>

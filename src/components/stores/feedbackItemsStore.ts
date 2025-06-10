@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import { TFeedbackItem } from '../../lib/types';
+import { create } from "zustand";
+import { TFeedbackItem } from "../../lib/types";
 
 type Store = {
   feedbackItems: TFeedbackItem[];
@@ -16,8 +16,8 @@ type Store = {
 export const useFeedbackItemsStore = create<Store>((set, get) => ({
   feedbackItems: [],
   isLoading: false,
-  errorMessage: '',
-  selectedCompany: '',
+  errorMessage: "",
+  selectedCompany: "",
   getCompanyList: () => {
     return get()
       .feedbackItems.map((item) => item.company)
@@ -36,8 +36,8 @@ export const useFeedbackItemsStore = create<Store>((set, get) => ({
   },
   addItemToList: async (text: string) => {
     const companyName = text
-      .split(' ')
-      .find((word) => word.includes('#'))!
+      .split(" ")
+      .find((word) => word.includes("#"))!
       .substring(1);
 
     const newItem: TFeedbackItem = {
@@ -54,13 +54,13 @@ export const useFeedbackItemsStore = create<Store>((set, get) => ({
     }));
 
     await fetch(
-      'https://bytegrad.com/course-assets/projects/corpcomment/api/feedbacks',
+      "https://bytegrad.com/course-assets/projects/corpcomment/api/feedbacks",
       {
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify(newItem),
         headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
       }
     );
@@ -77,7 +77,7 @@ export const useFeedbackItemsStore = create<Store>((set, get) => ({
 
     try {
       const response = await fetch(
-        'https://bytegrad.com/course-assets/projects/corpcomment/api/feedbacks'
+        "https://bytegrad.com/course-assets/projects/corpcomment/api/feedbacks"
       );
 
       if (!response.ok) {
@@ -90,7 +90,7 @@ export const useFeedbackItemsStore = create<Store>((set, get) => ({
       }));
     } catch (error) {
       set(() => ({
-        errorMessage: 'Something went wrong. Please try again later.',
+        errorMessage: "Something went wrong. Please try again later.",
       }));
     }
 

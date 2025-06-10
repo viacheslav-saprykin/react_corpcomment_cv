@@ -1,5 +1,4 @@
-
-import { useFeedbackItemsStore } from '../stores/feedbackItemsStore';
+import { useFeedbackItemsStore } from '../../components/stores/feedbackItemsStore';
 import HashtagItem from './HashtagItem';
 
 export default function HashtagList() {
@@ -9,7 +8,11 @@ export default function HashtagList() {
   return (
     <ul className="hashtags">
       {companyList.map((company) => (
-        <HashtagItem key={company} company={company} onSelectCompany={selectCompany} />
+        <HashtagItem
+          key={company}
+          company={company}
+          onSelectCompany={selectCompany}
+        />
       ))}
     </ul>
   );

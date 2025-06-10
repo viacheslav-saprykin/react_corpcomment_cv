@@ -1,8 +1,8 @@
 import Container from './layout/Container';
 import Footer from './layout/Footer';
 import HashtagList from './hasgtag/HashtagList';
+import { useFeedbackItemsStore } from '../components/stores/feedbackItemsStore';
 import { useEffect } from 'react';
-import { useFeedbackItemsStore } from './stores/feedbackItemsStore';
 
 function App() {
   const fetchFeedbackItems = useFeedbackItemsStore(
@@ -18,7 +18,7 @@ function App() {
       <Footer />
 
       <Container />
-      
+
       <HashtagList />
     </div>
   );
